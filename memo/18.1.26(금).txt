@@ -1,0 +1,34 @@
+18.1.26(금)
+
+자바에서 중요한 것
+equals
+hashcode
+toString
+
+리플렉션
+클래시의 생성자,필드,메소드정보를 알아내는 것
+세터,게터
+(??)
+
+자바lang의 string 부분 코딩 모두 다 해보기!!
+
+코드타자
+StringEx1
+StringEx2
+StringEx4
+StringEx5
+StringEx6
+
+저장경로
+C:\Html5Projects\html5Lab\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\work\Catalina\localhost\jspPro\org\apache\jsp\jsp_005f180125_005fthu
+
+자바에서 콜렉션과 자바lang 부분은 꼭 공부하기
+
+<JSP>
+
+하이브리드
+
+노드JS도 해야한다
+
+에이작스 중요
+
