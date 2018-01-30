@@ -11,19 +11,14 @@
   </welcome-file-list>
 
 	
-<error-page>
-	<error-code>404</error-code>
-	<location>/jsp_180129_mon/error/error404.jsp</location>
-</error-page>
-<error-page>
-	<error-code>500</error-code>
-	<location>/jsp_180129_mon/error/error500.jsp</location>
-</error-page>
-<error-page>
-	<exception-type>java.lang.NullPointerException</exception-type>
-	<location>/jsp_180129_mon/error/errorNullPointer.jsp</location>
-</error-page>
-</web-app>
+  <jsp-config>
+  	<jsp-property-group>
+  		<url-pattern>/jsp_180130_tu/view/*</url-pattern>
+  		<include-prelude>/jsp_180130_tu/common/variable.jsp</include-prelude>
+  		<include-coda>/jsp_180130_tu/common/footer.jsp</include-coda>
+  	</jsp-property-group>
+  </jsp-config>
+ </web-app>
 
 
 
