@@ -18,6 +18,13 @@
   		<include-coda>/jsp_180130_tu/common/footer.jsp</include-coda>
   	</jsp-property-group>
   </jsp-config>
+  
+  <servlet>
+  	<servlet-name>OracleDriverLoader</servlet-name>
+  	<servlet-class>jdbc.OracleDriverLoader</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
  </web-app>
 
 

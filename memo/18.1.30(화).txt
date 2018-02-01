@@ -1,0 +1,21 @@
+18.1.30(화)
+
+xml
+
+세개 다 할때 헤더부분이 똑같아야. (간편하게 헤더,푸터 붙이는 법이다)
+즉,
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+이 부분이 다 똑같아야한다.
+
+
+		<%-- <jsp:param name="type" value="<%=request.getParameter(\"type\") %>" /> --%>
+
+
+
+
+
+
+<질문>
+절대경로, 상대경로 ?
+F 들어가는 것과 안들어가는 것의 차이는?
