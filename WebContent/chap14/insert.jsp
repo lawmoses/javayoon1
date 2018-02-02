@@ -1,30 +1,32 @@
-<%@page import="java.sql.SQLException"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%
-	request.setCharacterEncoding("EUC-KR");
+<%@ page contentType = "text/html; charset=utf-8" %>
 
+<%@ page import = "java.sql.DriverManager" %>
+<%@ page import = "java.sql.Connection" %>
+<%@ page import = "java.sql.PreparedStatement" %>
+<%@ page import = "java.sql.SQLException" %>
+
+<%
+	request.setCharacterEncoding("utf-8");
+	
 	String memberID = request.getParameter("memberID");
-	String password = request.getParameter("password");
+	String password= request.getParameter("password");
 	String name = request.getParameter("name");
 	String email = request.getParameter("email");
 	
-	Class.forName("oracle.jdbc.driver.OracleDriver");
+	Class.forName("com.mysql.jdbc.Driver");
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
-	
+
 	try {
-		String jdbcDriver = "jdbc:oracle:thin:@localhost:1521:orcl";
-		String dbUser = "scott";
-		String dbPass = "tiger";
+		String jdbcDriver = "jdbc:mysql://localhost:3306/chap14?" +
+							"useUnicode=true&characterEncoding=utf8";
+		String dbUser = "jspexam";
+		String dbPass = "jsppw";
 		
 		conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
-		pstmt = conn.prepareStatement("insert into MEMBER values (?,?,?,?)");
+		pstmt = conn.prepareStatement(
+			"insert into MEMBER values (?, ?, ?, ?)");
 		pstmt.setString(1, memberID);
 		pstmt.setString(2, password);
 		pstmt.setString(3, name);
@@ -32,16 +34,15 @@
 		
 		pstmt.executeUpdate();
 	} finally {
-		if (pstmt != null) try {pstmt.close();} catch (SQLException ex){}
-		if (conn != null) try {conn.close();} catch (SQLException ex){}
+		if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+		if (conn != null) try { conn.close(); } catch(SQLException ex) {}
 	}
 %>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>»ðÀÔ</title>
-</head>
+<head><title>ì‚½ìž…</title></head>
 <body>
-<h2>MEMBER Å×ÀÌºí¿¡ »õ·Î¿î ·¹ÄÚµå¸¦ »ðÀÔÇß½À´Ï´Ù.</h2>
+
+MEMBER í…Œì´ë¸”ì— ìƒˆë¡œìš´ ë ˆì½”ë“œë¥¼ ì‚½ìž…í–ˆìŠµë‹ˆë‹¤
+
 </body>
 </html>
